@@ -1,0 +1,35 @@
+﻿@model EmployeeListVm
+@{
+    ViewData["Title"] = "Home Page";
+}
+<style>
+    .employee-list {
+        display: flex;
+        width: 50%;
+        flex-direction: column;
+        margin: 5px;
+    }
+    .employee-item {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+    }
+    .employee-subitem {
+        width: 100%;
+        border: 1px solid black;
+    }
+    .employee-button {
+        border: 1px solid black;
+        text-decoration: none;
+        background-color: white;
+        color: black;
+        margin: 5px;
+    }
+</style>
+<a asp-action="Details" class="employee-button">Create new record</a>
+<div class="employee-list">
+    @foreach (var employee in Model.Employees)
+    {
+        @await Html.PartialAsync("Employee", employee)
+    }
+</div>

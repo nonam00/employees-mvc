@@ -1,0 +1,23 @@
+﻿@model EmployeeDetailsVm 
+
+<form method="post" action="@Model.ActionRoute">
+    <input type="hidden" name="id" value="@Model.Employee?.Id" />    
+    <p>
+        <label>Name:</label>
+        <input type="text" name="name" value="@Model.Employee?.Name" required/>
+    </p>
+    <p>
+        <label>Age:</label>
+        <input type="number" name="age" min="18" max="150" value="@Model.Employee?.Age" required/>
+    </p>
+    <button type="submit">
+        @if (Model.Employee != null)
+        {
+            <span>Update</span>
+        }
+        else
+        {
+            <span>Create</span>
+        }
+    </button>
+</form>

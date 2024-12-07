@@ -1,0 +1,8 @@
+﻿@model Employee
+
+<div class="employee-item">
+    <div class="employee-subitem">@Model.Name</div>
+    <div class="employee-subitem">@Model.Age</div>
+    <a asp-action="DeleteEmployee" asp-route-id="@Model.Id" class="employee-button">Delete</a>
+    <a asp-action="Details" asp-route-id="@Model.Id" class="employee-button">Edit</a>
+</div>
